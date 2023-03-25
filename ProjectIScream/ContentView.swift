@@ -12,7 +12,7 @@ struct ContentView: View {
     @State var healthStatus: Int = 0
     @State var power: Float = 0
     var barWidth: Double = 322.0
-    @State var monsterId: Int = Int.random(in: <#T##Range<Int>#>)
+    @State var monsterId: Int = Int.random(in: 0...6)
 
     var body: some View {
         ZStack {
