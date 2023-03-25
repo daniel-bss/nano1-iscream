@@ -18,6 +18,7 @@ struct HealthBarModifier: ViewModifier {
 
 struct HealthBar: View {
     @Binding var healthStatus: Int
+    @Binding var monsterId: Int
     var lineWidth: CGFloat = 4
     
     var body: some View {
@@ -37,14 +38,30 @@ struct HealthBar: View {
             Image("health\(healthStatus)")
                 .modifier(HealthBarModifier(healthStatus: $healthStatus))
                 .padding(.leading, 0 - CGFloat(healthStatus * 20))
-        } else if (healthStatus >= 4 && healthStatus <= 6) {
+        } else if (healthStatus >= 4 && healthStatus <= 5) {
             // change health bar (4, 5, 6)
             Image("health\(healthStatus)")
-                .padding(.bottom, 360)
+                .modifier(HealthBarModifier(healthStatus: $healthStatus))
+                .padding(.leading, -70)
+        } else if (healthStatus == 6) {
+            Image("health\(healthStatus)")
+                .modifier(HealthBarModifier(healthStatus: $healthStatus))
                 .padding(.leading, -70)
         } else {
             // if health is ZERO!
             Image("")
+                .onAppear {
+                    var newMonsterId = Int.random(in: 0...6)
+                    while true {
+                        if (monsterId == newMonsterId) {
+                            newMonsterId = Int.random(in: 0...6)
+                        } else {
+                            monsterId = newMonsterId
+                            break
+                        }
+                    }
+                    healthStatus = 0
+                }
         }
     }
 }
