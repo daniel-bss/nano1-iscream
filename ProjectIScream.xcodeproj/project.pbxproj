@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		65760B8F29CFB890003FE0BE /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65760B8E29CFB890003FE0BE /* WelcomeView.swift */; };
 		65D2A21929CE3C5400556AA7 /* ProjectIScreamApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D2A21829CE3C5400556AA7 /* ProjectIScreamApp.swift */; };
 		65D2A21B29CE3C5400556AA7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D2A21A29CE3C5400556AA7 /* ContentView.swift */; };
 		65D2A21D29CE3C5400556AA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65D2A21C29CE3C5400556AA7 /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		65760B8E29CFB890003FE0BE /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		65D2A21529CE3C5400556AA7 /* ProjectIScream.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectIScream.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65D2A21829CE3C5400556AA7 /* ProjectIScreamApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectIScreamApp.swift; sourceTree = "<group>"; };
 		65D2A21A29CE3C5400556AA7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 			children = (
 				65D2A21829CE3C5400556AA7 /* ProjectIScreamApp.swift */,
 				65D2A21A29CE3C5400556AA7 /* ContentView.swift */,
+				65760B8E29CFB890003FE0BE /* WelcomeView.swift */,
 				65D2A22C29CE554000556AA7 /* BarPointerView.swift */,
 				65D2A22A29CE549F00556AA7 /* DecibelsTextView.swift */,
 				65D2A22829CE467600556AA7 /* HealthBar.swift */,
@@ -155,6 +158,7 @@
 				65D2A21B29CE3C5400556AA7 /* ContentView.swift in Sources */,
 				65D2A22B29CE549F00556AA7 /* DecibelsTextView.swift in Sources */,
 				65D2A21929CE3C5400556AA7 /* ProjectIScreamApp.swift in Sources */,
+				65760B8F29CFB890003FE0BE /* WelcomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
