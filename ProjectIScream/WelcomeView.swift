@@ -9,7 +9,28 @@ import SwiftUI
 
 struct WelcomeView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            Image("background")
+                .resizable()
+                .ignoresSafeArea()
+                .aspectRatio(contentMode: .fill)
+            
+            VStack {
+                Image("welcomelogo")
+                    .padding(.bottom, 110)
+                
+                ZStack {
+                    Image("taptostart")
+                    Text("Tap to Start!")
+                        .font(.system(size: 32))
+                        .fontWeight(.bold)
+                        .foregroundColor(Color(red: 120/255.0, green: 122/255.0, blue: 0/255.0))
+                }
+                .padding(.top, 120)
+                
+            }
+            .padding(.top, 30)
+        }
     }
 }
 
