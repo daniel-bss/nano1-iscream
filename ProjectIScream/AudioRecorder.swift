@@ -48,8 +48,9 @@ class AudioRecorder: ObservableObject {
                 self.audioRecorder.updateMeters()
 
                 self.peakPower = self.audioRecorder.peakPower(forChannel: 0)
-//                self.peakPower += (160 - 78)
-                self.peakPower += (160 - 78 + 40) // untuk coba2
+                self.peakPower += (160 - 68)
+                self.peakPower += (0.1*self.peakPower)
+//                self.peakPower += (160 - 78 + 40) // untuk coba2
 //                print(self.peakPower)
             }
         } catch {

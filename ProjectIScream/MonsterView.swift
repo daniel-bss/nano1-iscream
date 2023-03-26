@@ -36,6 +36,9 @@ struct MonsterView: View {
                 .resizable()
                 .ignoresSafeArea()
                 .aspectRatio(contentMode: .fill)
+                .onAppear {
+                    audioRecorder.startRecording()
+                }
             
             // ================================================================
             if (startScreamingCounter != 0) {
@@ -153,9 +156,9 @@ struct MonsterView: View {
                     Image("poof")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 400)
+                        .frame(width: 300)
                         .padding(.top, -100)
-                        .padding(.trailing)
+                        .padding(.trailing, 30)
                         .onAppear {
                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                                 isDefeated = false

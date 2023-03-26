@@ -22,7 +22,7 @@ struct BarPointerView: View {
             .frame(width: 25, height: 50)
             .padding(.bottom, 70)
             .foregroundColor(.black)
-            .padding(.leading, (power == 0 ? (0 - CGFloat(barWidth/2.0)) : (0 - CGFloat(barWidth/2.0) - 40 + CGFloat(power * 1.5))) )
+            .padding(.leading, (power == 0 ? (0 - CGFloat(barWidth/2.0)) : (0 - CGFloat(barWidth/2.0) - 135 + CGFloat(power * 3.5))) )
             .onAppear {
                 Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { _ in
                     power = audioRecorder.peakPower
@@ -32,8 +32,8 @@ struct BarPointerView: View {
                         dbContainer.append(power)
 
                         // user's been screaming for 2 seconds (i.e., 0.01 * 200)
-//                        if (dbContainer.count >= 200) {
-                        if (dbContainer.count >= 50) {
+                        if (dbContainer.count >= 200) {
+//                        if (dbContainer.count >= 50) {
                             healthStatus += 1
                             dbContainer.removeAll()
                         }
