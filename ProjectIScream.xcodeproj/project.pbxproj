@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		652FA00629D0AD700048A43E /* MonsterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652FA00529D0AD700048A43E /* MonsterView.swift */; };
+		652FA00829D0DF740048A43E /* LeaderBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652FA00729D0DF740048A43E /* LeaderBoardView.swift */; };
 		65760B8F29CFB890003FE0BE /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65760B8E29CFB890003FE0BE /* WelcomeView.swift */; };
 		65D2A21929CE3C5400556AA7 /* ProjectIScreamApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D2A21829CE3C5400556AA7 /* ProjectIScreamApp.swift */; };
 		65D2A21B29CE3C5400556AA7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D2A21A29CE3C5400556AA7 /* ContentView.swift */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		652FA00529D0AD700048A43E /* MonsterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonsterView.swift; sourceTree = "<group>"; };
+		652FA00729D0DF740048A43E /* LeaderBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderBoardView.swift; sourceTree = "<group>"; };
 		65760B8E29CFB890003FE0BE /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		65D2A21529CE3C5400556AA7 /* ProjectIScream.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectIScream.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65D2A21829CE3C5400556AA7 /* ProjectIScreamApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectIScreamApp.swift; sourceTree = "<group>"; };
@@ -63,6 +67,8 @@
 			children = (
 				65D2A21829CE3C5400556AA7 /* ProjectIScreamApp.swift */,
 				65D2A21A29CE3C5400556AA7 /* ContentView.swift */,
+				652FA00729D0DF740048A43E /* LeaderBoardView.swift */,
+				652FA00529D0AD700048A43E /* MonsterView.swift */,
 				65760B8E29CFB890003FE0BE /* WelcomeView.swift */,
 				65D2A22C29CE554000556AA7 /* BarPointerView.swift */,
 				65D2A22A29CE549F00556AA7 /* DecibelsTextView.swift */,
@@ -154,11 +160,13 @@
 			files = (
 				65D2A22729CE3DDD00556AA7 /* AudioRecorder.swift in Sources */,
 				65D2A22929CE467600556AA7 /* HealthBar.swift in Sources */,
+				652FA00829D0DF740048A43E /* LeaderBoardView.swift in Sources */,
 				65D2A22D29CE554000556AA7 /* BarPointerView.swift in Sources */,
 				65D2A21B29CE3C5400556AA7 /* ContentView.swift in Sources */,
 				65D2A22B29CE549F00556AA7 /* DecibelsTextView.swift in Sources */,
 				65D2A21929CE3C5400556AA7 /* ProjectIScreamApp.swift in Sources */,
 				65760B8F29CFB890003FE0BE /* WelcomeView.swift in Sources */,
+				652FA00629D0AD700048A43E /* MonsterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

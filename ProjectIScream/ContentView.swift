@@ -7,62 +7,72 @@
 
 import SwiftUI
 
-struct Player: Hashable {
-    let id: Int
-    let name: String
-    let kills: Int
+
+//class Player: ObservableObject {
+//    @Published var id: Int
+//    @Published var name: String
+//    @Published var kills: Int
+//
+//    init(id: Int, name: String, kills: Int) {
+//        self.id = id
+//        self.name = name
+//        self.kills = kills
+//    }
+//
+//    convenience init() {
+//        self.init(id: 999, name: "johndoe", kills: 123)
+//    }
+//}
+
+struct Player {
+    var id: Int
+    var name: String
+    var kills: Int
+    
+    mutating func addKill() -> Void {
+        self.kills += 1
+    }
 }
+
+// Players for leaderboard
+//var players: [Player] = []
+var players: [Player] = [
+//    Player(id: 1, name: "daniel", kills: 12),
+//    Player(id: 2, name: "bernard", kills: 32),
+//    Player(id: 3, name: "sahala", kills: 1),
+//    Player(id: 4, name: "simamora", kills: 51),
+//    Player(id: 5, name: "qwert", kills: 33),
+//    Player(id: 6, name: "asdf", kills: 0)
+]
+
 
 struct ContentView: View {
     @StateObject var audioRecorder = AudioRecorder()
-    @State var healthStatus: Int = 0
-    @State var power: Float = 0
-    var barWidth: Double = 322.0
-    @State var monsterId: Int = Int.random(in: 0...6)
-//    let player: Player
-
+    @State var isStarted: Bool = false
+    @State var showLeaderboard: Bool = false
+    @State var playerId: Int = 999
+    
     var body: some View {
         ZStack {
-            Image("background")
-                .resizable()
-                .ignoresSafeArea()
-                .aspectRatio(contentMode: .fit)
             
-            Image("monster\(String(monsterId))")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 288)
-            
-            HealthBar(healthStatus: $healthStatus, monsterId: $monsterId)
-            
-            // BOTTOM WHITE BAR
-            ZStack {
-                RoundedRectangle(cornerRadius: 42)
-                    .fill(.white)
-                    .frame(width: .infinity, height: 288)
-                
-                Image("Bar")
-                    .padding(.bottom, 120)
-                
-                // BAR POINTER
-                BarPointerView(barWidth: barWidth, power: $power, audioRecorder: audioRecorder, healthStatus: $healthStatus)
-                
-                // DECIBELS TEXT
-                DecibelsTextView(power: $power)
-                
+            if (!isStarted && !showLeaderboard) {
+                WelcomeView(isStarted: $isStarted, playerId: $playerId)
+            } else if (isStarted && !showLeaderboard) {
+                MonsterView(audioRecorder: audioRecorder, playerId: $playerId, showLeaderboard: $showLeaderboard)
+            } else if showLeaderboard {
+                LeaderBoardView(players: players, isStarted: $isStarted, showLeaderboard: $showLeaderboard)
             }
-            .padding(.top, 630)
             
-        }
-        .onAppear {
-            audioRecorder.startRecording()
-//            player = Player(id: 1, name: "asd", kills: 12)
+            
+//            WelcomeView(isStarted: $isStarted, playerId: $playerId)
+//            MonsterView(audioRecorder: audioRecorder, playerId: $playerId, showLeaderboard: $showLeaderboard)
+//            LeaderBoardView(players: players, isStarted: $isStarted, showLeaderboard: $showLeaderboard)
         }
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView()
+//    }
+//}

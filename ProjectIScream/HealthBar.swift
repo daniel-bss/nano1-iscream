@@ -12,14 +12,18 @@ struct HealthBarModifier: ViewModifier {
     
     func body(content: Content) -> some View {
         content
-            .padding(.bottom, 360)
+            .padding(.bottom, 330)
     }
 }
+
 
 struct HealthBar: View {
     @Binding var healthStatus: Int
     @Binding var monsterId: Int
+    @Binding var isDefeated: Bool
     var lineWidth: CGFloat = 4
+    
+    @Binding var playerId: Int
     
     var body: some View {
         // Give border
@@ -30,7 +34,7 @@ struct HealthBar: View {
                 width: 140 + lineWidth * 2,
                 height: 27 + lineWidth * 2
             )
-            .padding(.bottom, 360)
+            .padding(.bottom, 330)
         
         // Change Health Bar image
         if (healthStatus >= 0 && healthStatus <= 3) {
@@ -61,6 +65,14 @@ struct HealthBar: View {
                         }
                     }
                     healthStatus = 0
+                    isDefeated = true
+                    
+                    for i in players.indices {
+                        if players[i].id == playerId {
+                            players[i].addKill()
+                        }
+                    }
+                    print(players[playerId - 1])
                 }
         }
     }

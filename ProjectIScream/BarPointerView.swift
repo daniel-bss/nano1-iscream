@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct BarPointerView: View {
-    var barWidth: Double
-    @Binding var power: Float
     @ObservedObject var audioRecorder: AudioRecorder
     
+    @Binding var power: Float
     @Binding var healthStatus: Int
     @State var dbContainer: [Float] = []
+    
+    var barWidth: Double
     
     var body: some View {
         Image(systemName: "arrowtriangle.up.fill")
@@ -31,8 +32,8 @@ struct BarPointerView: View {
                         dbContainer.append(power)
 
                         // user's been screaming for 2 seconds (i.e., 0.01 * 200)
-                        if (dbContainer.count >= 200) {
-                            print("masuk if 2")
+//                        if (dbContainer.count >= 200) {
+                        if (dbContainer.count >= 50) {
                             healthStatus += 1
                             dbContainer.removeAll()
                         }
