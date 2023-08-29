@@ -28,6 +28,8 @@ struct MonsterView: View {
     
     @Binding var showLeaderboard: Bool
     
+    @Binding var dbContainer: [Float]
+
     var barWidth: Double = 322.0
     
     var body: some View {
@@ -36,9 +38,9 @@ struct MonsterView: View {
                 .resizable()
                 .ignoresSafeArea()
                 .aspectRatio(contentMode: .fill)
-                .onAppear {
-                    audioRecorder.startRecording()
-                }
+//                .onAppear {
+//                    audioRecorder.startRecording()
+//                }
             
             // ================================================================
             if (startScreamingCounter != 0) {
@@ -101,7 +103,7 @@ struct MonsterView: View {
                     .padding(.top, 100)
                 }
             }
-            
+//
             // ================================================================
 
             
@@ -149,6 +151,7 @@ struct MonsterView: View {
                         .aspectRatio(contentMode: .fill)
                         .frame(width: 300)
                         .padding(.trailing, 35)
+                        .shadow(color: .red, radius: (dbContainer.count == 200) ? 50 : 0)
                     
                     HealthBar(healthStatus: $healthStatus, monsterId: $monsterId, isDefeated: $isDefeated, playerId: $playerId)
                         .padding(.trailing, 35)
@@ -175,7 +178,7 @@ struct MonsterView: View {
                         .padding(.bottom, 120)
 
                     // BAR POINTER
-                    BarPointerView(audioRecorder: audioRecorder, power: $power,  healthStatus: $healthStatus, barWidth: barWidth)
+                    BarPointerView(audioRecorder: audioRecorder, power: $power,  healthStatus: $healthStatus, barWidth: barWidth, dbContainer: $dbContainer)
 
                     // DECIBELS TEXT
                     DecibelsTextView(power: $power)

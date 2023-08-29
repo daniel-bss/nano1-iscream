@@ -24,6 +24,7 @@ class AudioRecorder: ObservableObject {
     
     func startRecording() {
         let recordingSession = AVAudioSession.sharedInstance()
+        
         do {
             try recordingSession.setCategory(.playAndRecord, mode: .default)
             try recordingSession.setActive(true)
@@ -38,6 +39,7 @@ class AudioRecorder: ObservableObject {
             AVNumberOfChannelsKey: 1,
             AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
         ]
+        
         do {
             audioRecorder = try AVAudioRecorder(url: audioFilename, settings: settings)
             audioRecorder.record()

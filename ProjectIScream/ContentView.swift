@@ -52,20 +52,25 @@ struct ContentView: View {
     @State var showLeaderboard: Bool = false
     @State var playerId: Int = 999
     
+    @State var dbContainer: [Float] = []
+
+    // Swiftful Thinking
+    
     var body: some View {
         ZStack {
             
-            if (!isStarted && !showLeaderboard) {
-                WelcomeView(isStarted: $isStarted, playerId: $playerId)
-            } else if (isStarted && !showLeaderboard) {
-                MonsterView(audioRecorder: audioRecorder, playerId: $playerId, showLeaderboard: $showLeaderboard)
-            } else if showLeaderboard {
-                LeaderBoardView(players: players, isStarted: $isStarted, showLeaderboard: $showLeaderboard)
-            }
+//            if (!isStarted && !showLeaderboard) {
+//                WelcomeView(isStarted: $isStarted, playerId: $playerId)
+//            } else if (isStarted && !showLeaderboard) {
+////                MonsterView(audioRecorder: audioRecorder, playerId: $playerId, showLeaderboard: $showLeaderboard)
+//                    MonsterView(audioRecorder: audioRecorder, playerId: $playerId, showLeaderboard: $showLeaderboard, dbContainer: $dbContainer)
+//            } else if showLeaderboard {
+//                LeaderBoardView(players: players, isStarted: $isStarted, showLeaderboard: $showLeaderboard)
+//            }
             
             
 //            WelcomeView(isStarted: $isStarted, playerId: $playerId)
-//            MonsterView(audioRecorder: audioRecorder, playerId: $playerId, showLeaderboard: $showLeaderboard)
+            MonsterView(audioRecorder: audioRecorder, playerId: $playerId, showLeaderboard: $showLeaderboard, dbContainer: $dbContainer)
 //            LeaderBoardView(players: players, isStarted: $isStarted, showLeaderboard: $showLeaderboard)
         }
     }

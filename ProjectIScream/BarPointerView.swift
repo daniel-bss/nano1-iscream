@@ -12,9 +12,9 @@ struct BarPointerView: View {
     
     @Binding var power: Float
     @Binding var healthStatus: Int
-    @State var dbContainer: [Float] = []
     
     var barWidth: Double
+    @Binding var dbContainer: [Float]
     
     var body: some View {
         Image(systemName: "arrowtriangle.up.fill")
