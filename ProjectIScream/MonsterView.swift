@@ -147,6 +147,7 @@ struct MonsterView: View {
                 
                 if !isDefeated {
                     Image("monster\(String(monsterId))")
+//                    Image("monster0")
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: 300)
